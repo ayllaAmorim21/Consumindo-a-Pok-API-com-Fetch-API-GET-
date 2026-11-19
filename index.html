@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex - Carta TCG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <h1>Pokédex REST</h1>
+
+        <form id="form-busca" class="barra-busca">
+            <input type="text" id="input-pokemon" placeholder="Digite o nome ou ID (ex: charizard, 25)" required>
+            <button type="submit">Buscar</button>
+        </form>
+
+        <p id="mensagem-status" class="status"></p>
+
+        <!-- Carta Pokémon -->
+        <section id="card-pokemon" class="carta oculto" data-tipo="normal">
+            <div class="carta-interior">
+                
+                <!-- Cabeçalho da Carta: Nome, HP e Tipo -->
+                <header class="carta-topo">
+                    <div class="titulo-grupo">
+                        <span id="poke-id" class="numero">#000</span>
+                        <h2 id="poke-nome">Nome</h2>
+                    </div>
+                    <div class="hp-grupo">
+                        <span class="hp-label">HP</span>
+                        <span id="poke-hp" class="hp-valor">00</span>
+                    </div>
+                </header>
+
+                <!-- Moldura da Imagem -->
+                <div class="moldura-arte">
+                    <img id="poke-img" src="" alt="Imagem do Pokémon">
+                </div>
+
+                <!-- Faixa de Classe e Tipo -->
+                <div class="faixa-info">
+                    <span id="poke-classe" class="classe">Classe: Desconhecida</span>
+                    <span id="poke-tipo" class="tipo">TIPO</span>
+                </div>
+
+                <!-- Status de Poder (Ataque) e Defesa -->
+                <div class="status-combate">
+                    <div class="stat-linha">
+                        <div class="stat-cabecalho">
+                            <span>⚔️ Poder (Ataque)</span>
+                            <strong id="poke-ataque">0</strong>
+                        </div>
+                        <div class="barra-fundo">
+                            <div id="barra-ataque" class="barra-preenchimento ataque"></div>
+                        </div>
+                    </div>
+
+                    <div class="stat-linha">
+                        <div class="stat-cabecalho">
+                            <span>🛡️ Defesa</span>
+                            <strong id="poke-defesa">0</strong>
+                        </div>
+                        <div class="barra-fundo">
+                            <div id="barra-defesa" class="barra-preenchimento defesa"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rodapé da Carta -->
+                <footer class="carta-rodape">
+                    <span id="poke-medidas">Alt: 0.0m | Peso: 0.0kg</span>
+                    <span>Pokédex TCG</span>
+                </footer>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
